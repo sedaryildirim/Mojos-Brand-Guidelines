@@ -54,32 +54,32 @@ const BRAND_DATA: BrandElement[] = [
       { 
         name: 'The Concept', 
         detail: "Mojo's is a bold, flavour-first American comfort food destination. Think crispy, indulgent, unapologetically satisfying — the kind of food that has regulars coming back twice a week and first-timers instantly hooked.",
-        image: 'https://picsum.photos/seed/mojo-hero/800/600'
+        image: '/assets/imgs/the-style-vibe.jpg'
       },
       { 
         name: 'Smash Burgers', 
         detail: "The undisputed hero. Seven builds ranging from the classic Bacon Cheese to the showstopping Brisket, each one crafted with intention. These aren't afterthoughts — they're the reason people walk through the door.",
-        image: 'https://picsum.photos/seed/burger/800/600'
+        image: '/assets/imgs/smash-burger.jpg'
       },
       { 
         name: 'Street-Style Starters', 
         detail: "Tacos on fried cheese tallow tortillas, loaded fries stacked with pulled pork and chipotle chicken. These are shareable, craveable, and highly Instagram-able.",
-        image: 'https://picsum.photos/seed/tacos/800/600'
+        image: '/assets/imgs/buttermilk-chicken-taco.jpg'
       },
       { 
         name: 'Southern Fried Chicken', 
         detail: "Woven throughout the menu as a recurring signature, from tenders to tacos to burgers. It's a thread that ties the whole offering together.",
-        image: 'https://picsum.photos/seed/fried-chicken/800/600'
+        image: '/assets/imgs/southern-fried-wings.jpg'
       },
       { 
         name: 'The Feeling', 
         detail: "Mojo's doesn't take itself too seriously — but it takes its food very seriously. It's relaxed, confident, and a little bit rowdy. \"The best meal you didn't need to dress up for.\"",
-        image: 'https://picsum.photos/seed/restaurant-vibe/800/600'
+        image: '/assets/imgs/the-feeling-group-shot.jpg'
       },
       { 
         name: 'The Tagline', 
         detail: "All flavour. No fuss.",
-        image: 'https://picsum.photos/seed/mojo-tagline/800/600'
+        image: '/assets/imgs/all-flavour-no-fuss.jpg'
       }
     ]
   },
@@ -205,32 +205,32 @@ const BRAND_DATA: BrandElement[] = [
       { 
         name: 'Plateware', 
         detail: 'Matte black stoneware with irregular, organic edges. Feels like raw earth.',
-        image: 'https://picsum.photos/seed/plate1/800/600'
+        image: '/assets/imgs/matte-black-plateware.jpg'
       },
       { 
         name: 'Burger Plate', 
         detail: 'Heavy-set matte black plate designed for our signature smash burgers. Wide rim for easy handling and grease-resistant finish.',
-        image: 'https://picsum.photos/seed/plate2/800/600'
+        image: '/assets/imgs/matte-black-burger-taco-plates.jpg'
       },
       { 
         name: 'Taco Plate', 
         detail: 'Elongated platter for our Fire & Smoke tacos. Perfect for sharing and displaying vibrant salsa colors.',
-        image: 'https://picsum.photos/seed/plate3/800/600'
+        image: '/assets/imgs/matte-black-burger-taco-plates.jpg'
       },
       { 
         name: 'Loaded Fries Bowl', 
         detail: 'Deep, industrial-style bowl for our pit-fired loaded fries. Retains heat and stands up to heavy toppings.',
-        image: 'https://picsum.photos/seed/bowl1/800/600'
+        image: '/assets/imgs/matte-black-burger-bowl.jpg'
       },
       { 
         name: 'Matte Black Cutlery & Plate Set', 
         detail: 'A complete set featuring our signature matte black plateware paired with brushed gunmetal flatware.',
-        image: 'https://picsum.photos/seed/cutlery1/800/600'
+        image: '/assets/imgs/matte-black-cutlery-plate-set.jpg'
       },
       { 
         name: 'Plateware & Cutlery', 
         detail: 'The perfect pairing of organic stoneware and industrial-grade steel.',
-        image: 'https://picsum.photos/seed/cutlery2/800/600'
+        image: '/assets/imgs/plateware-cutlery.jpg'
       }
     ]
   },
@@ -240,10 +240,10 @@ const BRAND_DATA: BrandElement[] = [
     icon: <Coffee className="w-6 h-6" />,
     description: 'Comfortable enough for a long set, durable enough for a mosh pit.',
     items: [
-      { name: 'Tables', detail: 'Reclaimed barn wood tops with heavy I-beam steel bases. Bolt-head details exposed.', image: 'https://picsum.photos/seed/tables/800/600' },
-      { name: 'Seating', detail: 'Distressed black leather booths with diamond stitching. Bar stools made from repurposed drum thrones.', image: 'https://picsum.photos/seed/seating/800/600' },
-      { name: 'Bar Counter', detail: 'Poured concrete with embedded guitar picks and broken vinyl shards.', image: 'https://picsum.photos/seed/bar/800/600' },
-      { name: 'Furniture Direction', detail: 'Custom "Stage Rig" trusses with adjustable PAR cans and warm Edison bulbs.', image: 'https://picsum.photos/seed/lighting/800/600' }
+      { name: 'Tables', detail: 'Reclaimed barn wood tops with heavy I-beam steel bases. Bolt-head details exposed.', image: '/assets/imgs/furniture-style-ideas.jpg' },
+      { name: 'Seating', detail: 'Distressed black leather booths with diamond stitching. Bar stools made from repurposed drum thrones.', image: '/assets/imgs/seating-styles.jpg' },
+      { name: 'Bar Counter', detail: 'Poured concrete with embedded guitar picks and broken vinyl shards.', image: '/assets/imgs/bar-counter.jpg' },
+      { name: 'Furniture Direction', detail: 'Custom "Stage Rig" trusses with adjustable PAR cans and warm Edison bulbs.', image: '/assets/imgs/chair-styles.jpg' }
     ]
   },
   {
@@ -255,18 +255,18 @@ const BRAND_DATA: BrandElement[] = [
       { 
         name: 'Front of House', 
         detail: "Mojo's logo'd T (Front small logo - back Large Logo). Denim jeans or shorts, rolled up sleeves.",
-        image: 'https://picsum.photos/seed/tshirt/800/600'
+        image: '/assets/imgs/mojos-vintage-tee-front.jpg'
       },
       { 
         name: 'Kitchen Crew', 
         detail: 'Heavy-duty black canvas aprons with leather straps and brass rivets.',
-        image: 'https://picsum.photos/seed/apron1/800/600'
+        image: '/assets/imgs/mojos-chefs-blacks.jpg'
       },
-      { name: 'The Full Look', detail: 'Full or half denim apron, dark navy / midnight black.', image: 'https://picsum.photos/seed/apron2/800/600' },
+      { name: 'The Full Look', detail: 'Full or half denim apron, dark navy / midnight black.', image: '/assets/imgs/staff-full-uniform.jpg' },
       { 
         name: 'Accessories', 
         detail: 'Branded "Fire & Smoke" bandanas and guitar-pick-shaped name badges.',
-        image: 'https://picsum.photos/seed/bandana/800/600'
+        image: '/assets/imgs/mojos-bandana.jpg'
       }
     ]
   },
@@ -279,22 +279,22 @@ const BRAND_DATA: BrandElement[] = [
       { 
         name: 'Classic Soul & Motown Royalty', 
         detail: 'Deep roots in 1960s–70s soul — Marvin Gaye, Aretha Franklin, Stevie Wonder, Sam & Dave, Wilson Pickett, Al Green. The foundation of the playlist, full of groove, emotion, and timeless vocal power.',
-        image: 'https://picsum.photos/seed/stevie/800/600'
+        image: '/assets/imgs/stevie-wonder-album.jpg'
       },
       { 
         name: 'The Blues Lineage', 
         detail: 'Ray Charles, B.B. King, John Lee Hooker, Bo Diddley, Big Joe Turner. This thread ties together the rawer, more rootsy side of the list, from boogie-woogie to soul blues, acting as the spiritual backbone.',
-        image: 'https://picsum.photos/seed/bbking/800/600'
+        image: '/assets/imgs/bb-king-album.jpg'
       },
       { 
         name: 'Funk, Disco & Groove', 
         detail: 'Earth, Wind & Fire, Kool & the Gang, James Brown, and Ike & Tina Turner. Highest-energy entries, made for moving, bridging soul to the dancefloor.',
-        image: 'https://picsum.photos/seed/jamesbrown/800/600'
+        image: '/assets/imgs/james-brown-album.jpg'
       },
       { 
         name: 'Classic Rock & Its Outliers', 
         detail: 'The Rolling Stones, Led Zeppelin, Pink Floyd, Fleetwood Mac, The Police, Patti Smith, David Bowie, Roxy Music, The Cruel Sea, and Nick Cave. Rock that carries a similar spirit to soul/blues.',
-        image: 'https://picsum.photos/seed/stones/800/600'
+        image: '/assets/imgs/rolling-stones-album.jpg'
       }
     ]
   },
@@ -307,42 +307,42 @@ const BRAND_DATA: BrandElement[] = [
       { 
         name: 'The Smash Burger', 
         detail: 'Our core focus. High-quality beef, smashed thin for maximum crust, served on toasted buns with signature Mojo sauce.',
-        image: 'https://picsum.photos/seed/burger2/800/600'
+        image: '/assets/imgs/smash-burger.jpg'
       },
       { 
         name: 'Fire & Smoke Tacos', 
         detail: 'Brisket and Pulled Pork served on fried cheese tallow tortillas with salsa roja and fresh cilantro.',
-        image: 'https://picsum.photos/seed/tacos2/800/600'
+        image: '/assets/imgs/buttermilk-chicken-taco.jpg'
       },
       { 
         name: 'Loaded Pit Fries', 
         detail: 'Fresh cut, skin-on fries topped with 12-hour smoked brisket and blue cheese ranch.',
-        image: 'https://picsum.photos/seed/fries1/800/600'
+        image: '/assets/imgs/brisket-loaded-fries.jpg'
       },
       { 
         name: 'Chicken Loaded Fries', 
         detail: 'Our signature fries topped with buttermilk fried chicken and spicy Mojo sauce.',
-        image: 'https://picsum.photos/seed/fries2/800/600'
+        image: '/assets/imgs/chicken-loaded-fries.jpg'
       },
       {
         name: 'Wings & Tenders',
         detail: 'Crispy, double-fried wings tossed in our signature dry rubs or wet sauces.',
-        image: 'https://picsum.photos/seed/wings1/800/600'
+        image: '/assets/imgs/southern-fried-wings.jpg'
       },
       {
         name: 'The "Grab" Shot',
         detail: 'Action photography style for social media, emphasizing the crispy texture and heat.',
-        image: 'https://picsum.photos/seed/grab/800/600'
+        image: '/assets/imgs/souther-friend-wings-being-grabbed.jpg'
       },
       {
         name: 'Southern Fried Tenders',
         detail: 'Hand-breaded buttermilk chicken tenders, served with a side of pit-fire salsa.',
-        image: 'https://picsum.photos/seed/tenders/800/600'
+        image: '/assets/imgs/chicken-tenders.jpg'
       },
       { 
         name: 'The Sweet Stuff', 
         detail: 'Indulgent finishers: Basque burnt cheesecake and ultra-thick honeycomb malt shakes.',
-        image: 'https://picsum.photos/seed/dessert/800/600'
+        image: '/assets/imgs/chocolate-brownie.jpg'
       }
     ]
   },
@@ -355,22 +355,22 @@ const BRAND_DATA: BrandElement[] = [
       { 
         name: 'Take Out Packaging', 
         detail: 'Pizza-style boxes for tacos/burgers with "Gig Poster" graphics. Heavy-duty, grease-resistant, and designed to be a collectible artifact.',
-        image: 'https://picsum.photos/seed/packaging/800/600'
+        image: '/assets/imgs/take-away-branding.jpg'
       },
       { 
         name: 'Website / Online Presence', 
         detail: 'High-contrast, high-performance digital hub. Featuring live pit-cams, online ordering, and a "Tour Dates" style event calendar.',
-        image: 'https://picsum.photos/seed/website/800/600'
+        image: '/assets/imgs/website-hero-img.jpg'
       },
       { 
         name: 'Social Media Channels', 
         detail: 'Aggressive, high-energy content. Focusing on the "Grab" shot, the sizzle of the pit, and the roar of the crowd. Consistent use of Mojo Crimson filters.',
-        image: 'https://picsum.photos/seed/social/800/600'
+        image: '/assets/imgs/social-media-icons.jpg'
       },
       { 
         name: 'Sunday Roast Marketing', 
         detail: 'Specialized "Family Set" campaigns. Emphasizing the "Low & Slow" tradition with a rock-and-roll twist. Large-format platters for the whole crew.',
-        image: 'https://picsum.photos/seed/roast/800/600'
+        image: '/assets/imgs/sunday-roast.jpg'
       }
     ]
   }
@@ -567,25 +567,25 @@ export default function App() {
                     <img 
                       src={
                         activeId === 'identity'
-                          ? 'https://picsum.photos/seed/vibe/1200/800'
+                          ? '/assets/imgs/the-style-vibe.jpg'
                           : activeId === 'palette'
-                            ? 'https://picsum.photos/seed/palette/1200/800'
+                            ? '/assets/imgs/colour-palette-hero-img.jpg'
                             : activeId === 'tableware'
-                              ? 'https://picsum.photos/seed/tableware/1200/800'
+                              ? '/assets/imgs/tableware-hero-img.jpg'
                               : activeId === 'locations' 
                             ? 'https://i.imgur.com/gNL13PE.jpeg' 
                             : activeId === 'logo'
-                              ? 'https://picsum.photos/seed/logo-hero/1200/800'
+                              ? '/assets/imgs/mojos-logo-hero.jpg'
                               : activeId === 'typography'
-                                ? 'https://picsum.photos/seed/typography/1200/800'
+                                ? '/assets/imgs/typography-hero-image.jpg'
                                 : activeId === 'sound'
-                                  ? 'https://picsum.photos/seed/music/1200/800'
+                                  ? '/assets/imgs/music-playlist-bg.jpg'
                                   : activeId === 'menu'
-                                    ? 'https://picsum.photos/seed/food/1200/800'
+                                    ? '/assets/imgs/food-hero-shot.jpg'
                                     : activeId === 'uniforms'
-                                      ? 'https://picsum.photos/seed/staff/1200/800'
+                                      ? '/assets/imgs/staff-full-uniform.jpg'
                                       : activeId === 'furniture'
-                                        ? 'https://picsum.photos/seed/furniture/1200/800'
+                                        ? '/assets/imgs/furniture-style-ideas.jpg'
                                         : `https://picsum.photos/seed/${activeElement.id}/1200/800?grayscale`
                       } 
                       alt={activeElement.title}
