@@ -20,7 +20,9 @@ import {
   Mic2,
   Monitor,
   MapPin,
-  FlameKindling
+  FlameKindling,
+  Copy,
+  Check
 } from 'lucide-react';
 
 // --- Types ---
@@ -28,7 +30,7 @@ interface BrandElement {
   id: string;
   title: string;
   icon: React.ReactNode;
-  description: string;
+  description: string | React.ReactNode;
   items: { 
     name: string; 
     detail: string; 
@@ -53,12 +55,12 @@ const BRAND_DATA: BrandElement[] = [
     items: [
       { 
         name: 'The Concept', 
-        detail: "Mojo's is a bold, flavour-first American comfort food destination. Think crispy, indulgent, unapologetically satisfying — the kind of food that has regulars coming back twice a week and first-timers instantly hooked.",
+        detail: "Mojo's is a bold, flavour-first American comfort food destination. Think crispy, indulgent, unapologetically satisfying — the kind of food that has regulars coming back twice a week and first-timers instantly hooked.\n\nBold. Flavor-first. Unapologetic.\n\nThe Vibe: Indulgent American comfort food.\n\nThe Food: Crispy, satisfying, and high-impact.\n\nThe Goal: Instant hooks and high-frequency regulars.",
         image: '/assets/imgs/the-style-vibe.jpg'
       },
       { 
         name: 'Smash Burgers', 
-        detail: "The undisputed hero. Seven builds ranging from the classic Bacon Cheese to the showstopping Brisket, each one crafted with intention. These aren't afterthoughts — they're the reason people walk through the door.",
+        detail: "The undisputed hero. Seven builds ranging from the classic Bacon Cheese to the showstopping Brisket, each one crafted with intention. These aren't afterthoughts — they're the reason people walk through the door.\n\nThe main event. Seven intentional builds—from the Classic Bacon Cheese to the signature Brisket.\n\nPurpose: The primary driver of foot traffic.\n\nRange: 7-8 distinct, chef-driven variations.\n\nQuality: Zero afterthoughts; pure intention.",
         image: '/assets/imgs/smash-burger.jpg'
       },
       { 
@@ -259,10 +261,10 @@ const BRAND_DATA: BrandElement[] = [
       },
       { 
         name: 'Kitchen Crew', 
-        detail: 'Heavy-duty black canvas aprons with leather straps and brass rivets.',
+        detail: 'Chefs blacks, thin / easy to wear style, vintage washed, logo embroidery - rolled up sleeves, give a rough tough vibe',
         image: '/assets/imgs/mojos-chefs-blacks.jpg'
       },
-      { name: 'The Full Look', detail: 'Full or half denim apron, dark navy / midnight black.', image: '/assets/imgs/staff-full-uniform.jpg' },
+      { name: 'The Full Look', detail: 'Dark / denim look, with pop of colour depending on style preference for bandanas - fits with the dark red / blacks of the colour branding - logo can be red also! make it pop.', image: '/assets/imgs/staff-full-uniform.jpg' },
       { 
         name: 'Accessories', 
         detail: 'Branded "Fire & Smoke" bandanas and guitar-pick-shaped name badges.',
@@ -302,7 +304,11 @@ const BRAND_DATA: BrandElement[] = [
     id: 'menu',
     title: 'Menu Direction',
     icon: <Utensils className="w-6 h-6" />,
-    description: 'A return to our roots: focusing on legendary smash burgers, wood-fired BBQ, and perfecting every bite.',
+    description: (
+      <>
+        Mojo’s is a dedicated <strong className="text-white font-bold">lunch, dinner, and late-night destination</strong> built on the pillars of <strong className="text-white font-bold">legendary smash burgers, tacos, starters and loaded fries</strong>. To maintain our identity, we prioritize <strong className="text-white font-bold">perfecting the core menu</strong> over expansion; while <strong className="text-white font-bold">Sunday Roasts and localized brunches</strong> align with our roots, early morning coffee, juices, and breakfast are excluded to <strong className="text-white font-bold">prevent brand dilution</strong>. By sticking to what we do best, we ensure every bite is a <strong className="text-white font-bold">"hero" experience</strong> that protects our position as a <strong className="text-white font-bold">premier burger and beer venue</strong>.
+      </>
+    ),
     items: [
       { 
         name: 'The Smash Burger', 
@@ -315,11 +321,6 @@ const BRAND_DATA: BrandElement[] = [
         image: '/assets/imgs/buttermilk-chicken-taco.jpg'
       },
       { 
-        name: 'Loaded Pit Fries', 
-        detail: 'Fresh cut, skin-on fries topped with 12-hour smoked brisket and blue cheese ranch.',
-        image: '/assets/imgs/brisket-loaded-fries.jpg'
-      },
-      { 
         name: 'Chicken Loaded Fries', 
         detail: 'Our signature fries topped with buttermilk fried chicken and spicy Mojo sauce.',
         image: '/assets/imgs/chicken-loaded-fries.jpg'
@@ -328,11 +329,6 @@ const BRAND_DATA: BrandElement[] = [
         name: 'Wings & Tenders',
         detail: 'Crispy, double-fried wings tossed in our signature dry rubs or wet sauces.',
         image: '/assets/imgs/southern-fried-wings.jpg'
-      },
-      {
-        name: 'The "Grab" Shot',
-        detail: 'Action photography style for social media, emphasizing the crispy texture and heat.',
-        image: '/assets/imgs/souther-friend-wings-being-grabbed.jpg'
       },
       {
         name: 'Southern Fried Tenders',
@@ -399,79 +395,96 @@ const NavItem = ({ element, active, onClick }: { element: BrandElement, active: 
   </button>
 );
 
-const DetailCard = ({ item }: { item: { name: string, detail: string, image?: string, mapEmbed?: string, link?: string, color?: string, hexTextColor?: string, fontFamily?: string, samples?: string[], objectFit?: 'cover' | 'contain' }, key?: React.Key }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    className="group relative bg-zinc-900/50 border border-zinc-800 p-6 rounded-lg hover:border-red-600/50 transition-colors overflow-hidden"
-  >
-    {item.color ? (
-      <div className="mb-6 aspect-square rounded-md overflow-hidden border border-zinc-800 flex items-center justify-center" style={{ backgroundColor: item.color }}>
-        <span className={`text-[10px] font-mono font-bold uppercase tracking-widest ${item.hexTextColor ? item.hexTextColor : 'text-white/40 mix-blend-difference'}`}>
-          {item.color}
-        </span>
-      </div>
-    ) : item.mapEmbed ? (
-      <div className="mb-6 aspect-square rounded-md overflow-hidden border border-zinc-800 bg-black">
-        <iframe
-          title={item.name}
-          width="100%"
-          height="100%"
-          style={{ border: 0, filter: 'grayscale(1) contrast(1.2) invert(0.9) brightness(0.8)' }}
-          src={item.mapEmbed}
-          allowFullScreen
-          loading="lazy"
-        ></iframe>
-      </div>
-    ) : item.image && (
-      <div className="mb-6 aspect-square rounded-md overflow-hidden border border-zinc-800 bg-black p-4">
-        <img 
-          src={item.image} 
-          alt={item.name} 
-          className={`w-full h-full ${item.objectFit === 'contain' ? 'object-contain' : 'object-cover'} group-hover:scale-110 transition-transform duration-500`}
-          referrerPolicy="no-referrer"
-        />
-      </div>
-    )}
-    <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-100 transition-opacity">
-      <Zap className="w-4 h-4 text-red-600" />
-    </div>
-    <h4 className={`text-red-500 font-bold uppercase tracking-tighter text-lg mb-2 ${item.fontFamily || ''}`}>{item.name}</h4>
-    <p className="text-zinc-400 text-sm leading-relaxed mb-4">{item.detail}</p>
-    
-    {item.link && (
-      <a 
-        href={item.link} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-widest text-red-600 hover:text-red-500 transition-colors border border-red-600/20 px-3 py-2 rounded bg-red-600/5"
-      >
-        <MapPin className="w-3 h-3" />
-        View on Google Maps
-      </a>
-    )}
+const DetailCard = ({ item, sectionId }: { item: { name: string, detail: string, image?: string, mapEmbed?: string, link?: string, color?: string, hexTextColor?: string, fontFamily?: string, samples?: string[], objectFit?: 'cover' | 'contain' }, sectionId: string, key?: React.Key }) => {
+  const [copied, setCopied] = useState(false);
 
-    {item.fontFamily && item.samples && (
-      <div className={`mt-6 p-6 bg-black/40 rounded-lg border border-zinc-800/50 ${item.fontFamily}`}>
-        <p className="text-[10px] font-sans uppercase tracking-[0.2em] text-zinc-600 mb-4 border-b border-zinc-800 pb-2">Font Preview</p>
-        <div className="space-y-4">
-          <div className="flex flex-col gap-1">
-            <span className="text-[8px] font-sans uppercase tracking-widest text-zinc-700">Upper Case</span>
-            <span className="text-2xl md:text-3xl text-zinc-100 break-all">{item.samples[0]}</span>
-          </div>
-          <div className="flex flex-col gap-1">
-            <span className="text-[8px] font-sans uppercase tracking-widest text-zinc-700">Lower Case</span>
-            <span className="text-2xl md:text-3xl text-zinc-100 break-all">{item.samples[1]}</span>
-          </div>
-          <div className="flex flex-col gap-1">
-            <span className="text-[8px] font-sans uppercase tracking-widest text-zinc-700">Alphabet</span>
-            <span className="text-xl md:text-2xl text-zinc-100 break-all leading-tight">The quick brown fox jumps over the lazy dog.</span>
+  const handleCopyHex = (hex: string) => {
+    navigator.clipboard.writeText(hex);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="group relative bg-zinc-900/50 border border-zinc-800 p-6 rounded-lg hover:border-red-600/50 transition-all duration-300 overflow-hidden"
+    >
+      {item.color ? (
+        <div className="mb-6 aspect-square rounded-md overflow-hidden border border-zinc-800 flex items-center justify-center relative group/color" style={{ backgroundColor: item.color }}>
+          <span className={`text-[10px] font-mono font-bold uppercase tracking-widest ${item.hexTextColor ? item.hexTextColor : 'text-white/40 mix-blend-difference'}`}>
+            {item.color}
+          </span>
+          <button 
+            onClick={() => handleCopyHex(item.color!)}
+            className="absolute inset-0 bg-black/60 opacity-0 group-hover/color:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2 text-[10px] font-mono font-bold uppercase tracking-widest text-white"
+          >
+            {copied ? <Check className="w-5 h-5 text-green-500" /> : <Copy className="w-5 h-5" />}
+            {copied ? 'Copied!' : 'Copy Hex'}
+          </button>
+        </div>
+      ) : item.mapEmbed ? (
+        <div className="mb-6 aspect-square rounded-md overflow-hidden border border-zinc-800 bg-black">
+          <iframe
+            title={item.name}
+            width="100%"
+            height="100%"
+            style={{ border: 0, filter: 'grayscale(1) contrast(1.2) invert(0.9) brightness(0.8)' }}
+            src={item.mapEmbed}
+            allowFullScreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      ) : item.image && (
+        <div className="mb-6 aspect-square rounded-md overflow-hidden border border-zinc-800 bg-black p-4 relative group/image">
+          <img 
+            src={item.image} 
+            alt={item.name} 
+            className={`w-full h-full ${item.objectFit === 'contain' ? 'object-contain' : 'object-cover'} group-hover:scale-110 transition-transform duration-500`}
+            referrerPolicy="no-referrer"
+          />
+        </div>
+      )}
+      <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-100 transition-opacity">
+        <Zap className="w-4 h-4 text-red-600" />
+      </div>
+      <h4 className={`text-red-500 font-bold uppercase tracking-tighter text-lg mb-2 ${item.fontFamily || ''}`}>{item.name}</h4>
+      <p className="text-zinc-400 text-sm leading-relaxed mb-4 whitespace-pre-line">{item.detail}</p>
+      
+      {item.link && (
+        <a 
+          href={item.link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-widest text-red-600 hover:text-red-500 transition-colors border border-red-600/20 px-3 py-2 rounded bg-red-600/5"
+        >
+          <MapPin className="w-3 h-3" />
+          View on Google Maps
+        </a>
+      )}
+
+      {item.fontFamily && item.samples && (
+        <div className={`mt-6 p-6 bg-black/40 rounded-lg border border-zinc-800/50 ${item.fontFamily}`}>
+          <p className="text-[10px] font-sans uppercase tracking-[0.2em] text-zinc-600 mb-4 border-b border-zinc-800 pb-2">Font Preview</p>
+          <div className="space-y-4">
+            <div className="flex flex-col gap-1">
+              <span className="text-[8px] font-sans uppercase tracking-widest text-zinc-700">Upper Case</span>
+              <span className="text-2xl md:text-3xl text-zinc-100 break-all">{item.samples[0]}</span>
+            </div>
+            <div className="flex flex-col gap-1">
+              <span className="text-[8px] font-sans uppercase tracking-widest text-zinc-700">Lower Case</span>
+              <span className="text-2xl md:text-3xl text-zinc-100 break-all">{item.samples[1]}</span>
+            </div>
+            <div className="flex flex-col gap-1">
+              <span className="text-[8px] font-sans uppercase tracking-widest text-zinc-700">Alphabet</span>
+              <span className="text-xl md:text-2xl text-zinc-100 break-all leading-tight">The quick brown fox jumps over the lazy dog.</span>
+            </div>
           </div>
         </div>
-      </div>
-    )}
-  </motion.div>
-);
+      )}
+    </motion.div>
+  );
+};
 
 export default function App() {
   const [activeId, setActiveId] = useState(BRAND_DATA[0].id);
@@ -555,7 +568,7 @@ export default function App() {
                 {/* Grid of details */}
                 <div className={`grid gap-6 mb-20 ${activeId === 'palette' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2'}`}>
                   {activeElement.items.map((item, idx) => (
-                    <DetailCard key={idx} item={item} />
+                    <DetailCard key={idx} item={item} sectionId={activeId} />
                   ))}
                 </div>
 
