@@ -508,7 +508,7 @@ export default function App() {
             <span className="w-1 h-1 bg-red-600 rounded-full"></span>
             <span>Thailand Outposts</span>
             <span className="w-1 h-1 bg-red-600 rounded-full"></span>
-            <span>Rock & BBQ Identity</span>
+            <span>Rockin' Smash Burgers</span>
           </div>
         </div>
       </header>
@@ -534,7 +534,7 @@ export default function App() {
           
           <div className="absolute bottom-8 left-6 right-6 p-4 bg-red-600/10 border border-red-600/20 rounded-lg">
             <p className="text-[10px] text-red-500 font-bold uppercase mb-1">Confidential</p>
-            <p className="text-[9px] text-zinc-500 leading-tight">Internal use only. All designs are property of Mojo's Fire & Smoke BBQ.</p>
+            <p className="text-[9px] text-zinc-500 leading-tight">Internal use only. All designs are property of Mojo's Fire & Smoke.</p>
           </div>
         </aside>
 
@@ -671,7 +671,7 @@ export default function App() {
           <div className="flex items-center gap-4">
             <FlameKindling className="text-red-600 w-8 h-8" />
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">Mojo's Fire & Smoke BBQ</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">Mojo's Fire & Smoke</p>
               <p className="text-[10px] text-zinc-600">© 2026 All Rights Reserved. Smoked low, played loud.</p>
             </div>
           </div>
